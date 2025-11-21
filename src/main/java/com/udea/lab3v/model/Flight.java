@@ -2,9 +2,9 @@ package com.udea.lab3v.model;
 
 import lombok.*;
 
-import javax.persistence.*;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
 import java.io.Serializable;
 
 @Data
@@ -34,15 +34,15 @@ public class Flight implements Serializable {
     private @NonNull String destino;
 
     @Column(name = "capacidad", nullable = false, length = 80)
-    private @NonNull int capacidad;
+    private int capacidad;
 
     @Column(name = "rating", nullable = false, length = 80)
     @Min(value = 1, message = "id shoud be more or than equals 1")
     @Max(value = 5, message = "id shoud be less or than equals 5" )
-    private @NonNull int rating;
+    private int rating;
 
     @Column(name = "planvuelo", nullable = false, length = 80)
-    private @NonNull long planVuelo;
+    private long planVuelo;
 
     private Boolean cumplido;
 
@@ -86,32 +86,29 @@ public class Flight implements Serializable {
         this.destino = destino;
     }
 
-    @NonNull
     public int getCapacidad() {
         return capacidad;
     }
 
-    public void setCapacidad(@NonNull int capacidad) {
+    public void setCapacidad(int capacidad) {
         this.capacidad = capacidad;
     }
 
     @Min(value = 1, message = "id shoud be more or than equals 1")
     @Max(value = 5, message = "id shoud be less or than equals 5")
-    @NonNull
     public int getRating() {
         return rating;
     }
 
-    public void setRating(@Min(value = 1, message = "id shoud be more or than equals 1") @Max(value = 5, message = "id shoud be less or than equals 5") @NonNull int rating) {
+    public void setRating(@Min(value = 1, message = "id shoud be more or than equals 1") @Max(value = 5, message = "id shoud be less or than equals 5") int rating) {
         this.rating = rating;
     }
 
-    @NonNull
     public long getPlanVuelo() {
         return planVuelo;
     }
 
-    public void setPlanVuelo(@NonNull long planVuelo) {
+    public void setPlanVuelo(long planVuelo) {
         this.planVuelo = planVuelo;
     }
 
