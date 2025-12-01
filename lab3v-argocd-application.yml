@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: lab3v
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/RUTENCO/lab3v.git
+    targetRevision: HEAD
+    path: .                       #  ESTÁ EN LA RAÍZ
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
