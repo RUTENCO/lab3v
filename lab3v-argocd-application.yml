@@ -8,7 +8,7 @@ spec:
 
   source:
     repoURL: https://github.com/RUTENCO/lab3v.git
-    targetRevision: HEAD
+    targetRevision: main
     path: .                       #  ESTÁ EN LA RAÍZ
 
   destination:
